@@ -23,37 +23,35 @@ export default function MainPage() {
 
   return (
     <>
-      <S.MainDiv>
-        <S.BgVideo>
-          <video muted loop autoPlay>
-            <source
-              src="https://gransaga.com/assets/video/main/video_066.mp4"
-              type="video/mp4"
-            />
-          </video>
-        </S.BgVideo>
-        <S.Title>
-          <img
-            src="https://gransaga.com/assets/images/desktop/main/title_066.png"
-            alt=""
+      <S.BgVideo>
+        <video muted loop autoPlay>
+          <source
+            src="https://gransaga.com/assets/video/main/video_066.mp4"
+            type="video/mp4"
           />
-        </S.Title>
-        <S.Btn_dn>
-          {btn_dn.map((btn) => (
-            <img src={btn} alt="" />
-          ))}
-        </S.Btn_dn>
-        <S.Scroll
-          onMouseOver={() => arrowActive(true)}
-          onMouseOut={() => arrowActive(false)}
-        >
-          <img
-            ref={arrowRef}
-            src="https://gransaga.com/assets/images/desktop/main/arrow_dn_2.png"
-            alt=""
-          />
-        </S.Scroll>
-      </S.MainDiv>
+        </video>
+      </S.BgVideo>
+      <S.Title>
+        <img
+          src="https://gransaga.com/assets/images/desktop/main/title_066.png"
+          alt=""
+        />
+      </S.Title>
+      <S.Btn_dn>
+        {btn_dn.map((btn) => (
+          <img src={btn} alt="" />
+        ))}
+      </S.Btn_dn>
+      <S.Scroll
+        onMouseOver={() => arrowActive(true)}
+        onMouseOut={() => arrowActive(false)}
+      >
+        <img
+          ref={arrowRef}
+          src="https://gransaga.com/assets/images/desktop/main/arrow_dn_2.png"
+          alt=""
+        />
+      </S.Scroll>
     </>
   );
 }
