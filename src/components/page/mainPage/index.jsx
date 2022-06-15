@@ -1,28 +1,22 @@
 import React, { useRef } from "react";
 import * as S from "./styles";
+import { btn_dn } from "../../../lib/export/data";
+import BtnDn from "../../common/btn_dn";
 
 export default function MainPage() {
   const arrowRef = useRef(null);
-  const btn_dn = [
-    "https://gransaga.com/assets/images/desktop/main/btn_dn_google.png?v=00000000",
-    "https://gransaga.com/assets/images/desktop/main/btn_dn_apple.png?v=00000000",
-    "https://gransaga.com/assets/images/desktop/main/btn_dn_onestore.png?v=00000000",
-    "https://gransaga.com/assets/images/desktop/main/btn_dn_galaxy.png?v=00000000",
-    "https://gransaga.com/assets/images/desktop/main/btn_dn_pc.png?v=00000000",
-    "https://gransaga.com/assets/images/desktop/main/btn_dn_mac.png?v=00000000",
-  ];
 
   const arrowActive = (bool) => {
     if (bool) {
       arrowRef.current.style =
-        "animation: updown 0.3s linear infinite alternate;";
+        "animation: updown 0.3s ease-in-out infinite alternate;";
     } else {
       arrowRef.current.style = "animation: none";
     }
   };
 
   return (
-    <>
+    <S.Container>
       <S.BgVideo>
         <video muted loop autoPlay>
           <source
@@ -38,9 +32,7 @@ export default function MainPage() {
         />
       </S.Title>
       <S.Btn_dn>
-        {btn_dn.map((btn) => (
-          <img src={btn} alt="" />
-        ))}
+        <BtnDn />
       </S.Btn_dn>
       <S.Scroll
         onMouseOver={() => arrowActive(true)}
@@ -52,6 +44,6 @@ export default function MainPage() {
           alt=""
         />
       </S.Scroll>
-    </>
+    </S.Container>
   );
 }
