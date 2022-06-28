@@ -6,7 +6,7 @@ export const Container = styled.div`
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-`
+`;
 
 export const KeyArtDiv = styled.div`
   width: 1920px;
@@ -28,23 +28,23 @@ export const Text = styled.div`
   top: ${(props) => props.top}%;
   right: ${(props) => props.right}%;
   left: ${(props) => props.left}%;
-  /* transform: translate(
-    ${(props) => -props.left || -props.right}%,
-    ${(props) => -props.top}%
-  ); */
+  transform: translate(${(props) => -props.left || -props.right}%,${(props) => -props.top}%);
 
-  animation: FadeInText 1s ease-in-out;
-  animation-fill-mode: forwards;
-  opacity: 0;
+  .active {
+    animation: FadeInText 1s ease-in-out;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    animation-delay: 0.5s;
+  }
 
   @keyframes FadeInText {
     0% {
       opacity: 0;
-      transform: translate(${(props) => -props.left || -props.right}%,${(props) => -props.top + 30}%)
+      transform: translate(${(props) => -props.left || -props.right}%,${(props) => props.top + 20}%);
     }
     100% {
       opacity: 1;
-      transform: translate(${(props) => -props.left || -props.right}%,${(props) => -props.top}%);
+      transform: translate(${(props) => -props.left || -props.right}%,${(props) => props.top}%);
     }
   }
 `;
@@ -100,9 +100,12 @@ export const KeyArtPictures = styled.div`
     width: 480px;
   }
 
-  animation: FadeInKeyArt 1s ease-in-out;
-  animation-fill-mode: forwards;
-  opacity: 0;
+  .active {
+    animation: FadeInKeyArt 1s ease-in-out;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    animation-delay: 0.5s;
+  }
 
   @keyframes FadeInKeyArt {
     0% {
